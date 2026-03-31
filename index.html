@@ -1,272 +1,448 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>Satyanarayan Kanth</title>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js" type="text/javascript"></script>
-    <style>
-        a{
-            text-decoration: none;
-            
-        }
-        ul#more li {
-            margin-bottom: 21px;
-            list-style-type: none;
-        }
-        div#tile{
-            background-color: rgb(86, 7, 16);
-            color:white;
-            height: 350px;
-            width: 100%;
-            border-radius: 15px;
-            padding:20px 55px;
-        }
-
-        @media screen and (max-width:1200px){
-
-            #col1{
-                display: none;
-            }
-            div#tile{
-                margin-top: 30px;
-            }
-            div.col-xl-4{
-                text-align: center;
-            }
-        }
-        
-        @media screen and (max-width:768px){
-            div.carousel-indicators{
-                display: none;
-            }
-        }
-
-
-    </style>
+<!doctype html>
+<html class="dark" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Satyanarayan Kanth - Full Stack Developer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" href="icon.png"
+    <link
+      href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700;900&family=Fira+Code:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
     <script>
-        function projectshow(){
-            document.getElementById('projects').style="display:block;";
-        }
-        function hide(){
-            document.getElementById('projects').style="display:hidden;";}
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "var(--primary)",
+              "background-light": "#f8f5f6",
+              "background-dark": "#0f0a0b",
+            },
+          },
+        },
+      };
     </script>
-</head>
-<!--Body starts-->
-<body>
-    <!--Header Starts-->
-    <header>
-        <nav class="navbar navbar-expand-lg bg-dark navbar-dark" style="padding-left: 35px;padding-right: 35px;">
-            <div class="container-fluid">
-                <a href="https://kanthsatya.github.io" class="navbar-brand">
-                   Satyanarayan Kanth</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar"><span class="navbar-toggler-icon"></span></button>
-                <div class="collapse navbar-collapse" id="collapsibleNavbar">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item">
-                            <a href="https://kanthsatya.github.io" class="nav-link" style="margin-right: 30px;">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" target="_blank" class="nav-link" style="margin-right: 30px;">About</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Projects</a>
-                            <ul class="dropdown-menu dropdown-menu-end" style="z-index: 10000;" id="projects">
-                              <li><a class="dropdown-item" href="https://github.com/kanthsatya/Multifunctional-C-calculator/blob/main/Calculator.exe?raw=true" target="_blank">Multifunctional C calculator<sub>.exe</sub></a></li>
-                              <li><a class="dropdown-item" href="https://kanthsatya.github.io/Mac-UI-Notepad/" target="_blank">Mac UI Notepd</a></li>
-                              <li><a class="dropdown-item" href="https://kanthsatya.github.io/Site-mailer/" target="_blank">Site Mailer</a></li>
-                            </ul>
-                          </li>
-                          <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Sites</a>
-                            <ul class="dropdown-menu dropdown-menu-end" style="z-index: 10000;">
-                              <li><a class="dropdown-item" href="https://kanthsatya.github.io">kanthsatya.github.io</a></li>
-                              <li><a class="dropdown-item" href="https://codeforstudy.wordpress.com/" target="_blank">codeforstudy.wordpress.com</a></li>
-                              <li><a class="dropdown-item" href="">tnmafia.com<sub> not active</sub></a></li>
-                            </ul>
-                          </li>
-                          <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">More</a>
-                            <ul class="dropdown-menu dropdown-menu-end" style="z-index: 10000;">
-                              <li><a class="dropdown-item" href="https://codeforstudy.wordpress.com/" target="_blank">Click here to learn with me.</a></li>
-                              <li><a class="dropdown-item" href="https://codeforstudy.wordpress.com/c/" target="_blank">Click here to see all C programs by me</a></li>
-                              <li><a class="dropdown-item" href="https://codeforstudy.wordpress.com/c-language/" target="_blank">Click here to see all C++ programs by me</a></li>
-                              <li><a class="dropdown-item" href="#" target="_blank">Click here to view Question library.</a></li>
-                              <li><a class="dropdown-item" href="https://codeforstudy.wordpress.com/academic/" target="_blank">Click here to see all my posts</a></li>
-                            </ul>
-                          </li>
-                    </ul>
-                </div>
+  </head>
+  <body class="theme-angular">
+    <div
+      class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden"
+    >
+      <nav
+        class="fixed top-0 left-0 right-0 z-50 w-full border-b border-slate-200 dark:border-white/10 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md"
+      >
+        <div
+          class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between"
+        >
+          <div class="flex items-center gap-2 group cursor-pointer">
+            <div class="bg-primary p-1 rounded-sm" id="navbar-icon">
+              <span class="material-symbols-outlined text-white text-xl"
+                >layers</span
+              >
             </div>
-        </nav>
-    </header>
-    <!--Header Ends-->
-    <!--Main Body Starts-->
-    <main style="background-color: rgb(229, 241, 209); padding-top: 20px;padding-bottom: 20px;">
-        <div class="container">
-            <div class="row" style="padding-bottom: 20px;">
-                <h1 style="font-size: 60px; color: rgb(56, 96, 129); display: flex; justify-content: center;"> &lt;/ Hey !! &gt; </h1>
+            <span
+              class="text-lg font-black tracking-tighter uppercase dark:text-white"
+              >Satya<span class="text-primary" id="navbar-dev">Dev</span></span
+            >
+          </div>
+          <div class="hidden md:flex items-center gap-10">
+            <a
+              class="text-md font-medium hover:text-primary transition-colors"
+              href="#about"
+              >About</a
+            >
+            <a
+              class="text-md font-medium hover:text-primary transition-colors"
+              href="#skills"
+              >Stack</a
+            >
+            <a
+              class="text-md font-medium hover:text-primary transition-colors"
+              href="#experience"
+              >Experience</a
+            >
+            <a
+              class="text-md font-medium hover:text-primary transition-colors"
+              href="#projects"
+              >Work</a
+            >
+            <a
+              class="text-md font-medium hover:text-primary transition-colors"
+              href="#contact"
+              >Contact</a
+            >
+          </div>
+          <div class="flex items-center gap-4">
+            <div class="theme-switcher">
+              <button class="theme-btn angular active" data-theme="angular">
+                <span class="theme-dot"></span>
+                <span class="theme-text">Angular</span>
+              </button>
+              <button class="theme-btn dotnet" data-theme="dotnet">
+                <span class="theme-dot"></span>
+                <span class="theme-text">.NET</span>
+              </button>
             </div>
-            <div class="row" style="border-top: 1px solid brown;display: flex;align-items: center;padding-bottom: 20px;">
-                <div class="col" id="col1">
-                    <img src="man.png" alt="Man Pic">
-                </div>
-                <div class="col" id="col2">
-                    <!--Carousel starts-->
-                    <div id="project-carousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
-                       <!-- Indicators/dots starts-->
-                        <div class="carousel-indicators" style="height: 30px;width: 150px; margin-left: 35%;">
-                            <button type="button" data-bs-target="#project-carousel" data-bs-slide-to="0" class="active"></button>
-                            <button type="button" data-bs-target="#project-carousel" data-bs-slide-to="1" class="active"></button>
-                            <button type="button" data-bs-target="#project-carousel" data-bs-slide-to="2" class="active"></button>
-                            <button type="button" data-bs-target="#project-carousel" data-bs-slide-to="3" class="active"></button>
-                            <button type="button" data-bs-target="#project-carousel" data-bs-slide-to="4" class="active"></button>
-                        </div>
-                        <!-- Indicators/dots ends-->
-                        <!-- The slideshow/carousel starts -->
-                        <div class="carousel-inner">
+          </div>
+        </div>
+      </nav>
 
-                            <!--Tile 1-->
-                            <div class="carousel-item active">
-                                <div id="tile">
-                                    <p style="font-size: 35px;">Let's start</p>
-                                    <p>A portfolio website of me including :</p>
-                                    <ul>
-                                        <li>Codes</li>
-                                        <li>Projects</li>
-                                        <li>Skills</li>
-                                        <li>Achievements</li>
-                                    </ul>
-                                    <button class="btn btn-outline-info">Slide to view</button>
-                                </div>
-                            </div>
-                            <!--Tile 2-->
-                            <div class="carousel-item">
-                                <div id="tile">
-                                    <p style="font-size: 35px;">About</p>
-                                    <ul>
-                                        <li>Satyanarayan Kanth<br>
-                                        Student ( B.E CSE ) <br>
-                                        Chandigarh University, Mohali, Punjab</li>
-                                        
-                                        <li>LinkedIn : <a href="https://www.linkedin.com/in/satyanarayan-kanth-801b351bb/" target="_blank">Go to linkedIn</a></li>
-                                        <li>GitHub : <a href="https://github.com/kanthsatya" target="_blank">Go to github</a></li>
-                                    </ul>
-                                    <a href="#"><button class="btn btn-outline-info" target="_blank">Know more about me</button></a>
-                                </div>
-                            </div>
-                            <!--Tile 3-->
-                            <div class="carousel-item">
-                                <div id="tile">
-                                    <p style="font-size: 35px;">Projects</p>
-                                    <button class="btn btn-outline-info" style="margin-bottom: 15px;" onpointerenter="projectshow()" onpointerleave="hide()">Have a look at my some of the front-end projects.</button>
-                                    <ul id="more">
-                                        <li>
-                                            <a href="https://kanthsatya.github.io/Mac-UI-Notepad/" target="_blank">Mac UI Notepad</a>
-                                        </li>
-                                        <li>
-                                            <a href="https://kanthsatya.github.io/Site-mailer/" target="_blank">Site Mailer</a>
-                                        </li>
-                                        <li>
-                                            <a href="https://github.com/kanthsatya/Multifunctional-C-calculator/blob/main/Calculator.exe?raw=true" target="_blank">Multifunctional C calculator<sub>.exe</sub></a>
-                                        </li>
-                                    </ul>
-                                    <button class="btn btn-outline-info" onpointerenter="projectshow()" onpointerleave="hide()">View more</button>
-                                </div>
-                            </div>
-                            <!--Tile 4-->
-                            <div class="carousel-item">
-                                <div id="tile">
-                                    <p style="font-size: 35px;">Sites</p>
-                                    <ul>
-                                        <li><a href="https://kanthsatya.github.io">kanthsatya.github.io</a><br>Administrator
-                                        July 2021 - Present</li>
-                                        <li><a href="https://codeforstudy.wordpress.com/" target="_blank">codeforstudy.wordpress.com</a><br>Administrator
-                                        December 2020 - Present</li>
-                                        <li><a href="#">tnmafia.com</a><br>AdministratorOctober 2019 - June 2020</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <!--Tile 5-->
-                            <div class="carousel-item">
-                                <div id="tile">
-                                    <p style="font-size: 35px;">Moreover</p>
-                                    <ul id="more">
-                                        <li>
-                                            <a href="https://codeforstudy.wordpress.com/" target="_blank">Click here to learn with me.</a>
-                                        </li>
-                                        <li>
-                                            <a href="https://codeforstudy.wordpress.com/c/" target="_blank">Click here to see all C programs by me</a>
-                                        </li>
-                                        <li><a href="https://codeforstudy.wordpress.com/c-language/" target="_blank">Click here to see all C++ programs by me</a></li>
-                                        <li>
-                                            <a href="#" target="_blank">Click here to view Question library.</a>
-                                        </li>
-                                        <li>
-                                            <a href="https://codeforstudy.wordpress.com/academic/" target="_blank">Click here to see all my posts</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            
-                        </div>
-                        <!-- The slideshow/carousel ends -->
-                        <!-- Left and right controls/icons starts-->
-                        <button class="carousel-control-prev" type="button" data-bs-target="#project-carousel" data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon"></span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#project-carousel" data-bs-slide="next">
-                            <span class="carousel-control-next-icon"></span>
-                        </button>
-                        <!-- Left and right controls/icons ends-->
-                    </div>
-                    <!--Carousel ends-->
+      <main class="flex-1">
+        <section
+          class="relative py-20 lg:py-32 overflow-hidden border-b border-slate-200 dark:border-white/5"
+          id="hero"
+        >
+          <div
+            class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center"
+          >
+            <div class="z-10 min-w-0">
+              <div
+                class="inline-block px-3 py-1 mb-6 border border-primary/30 bg-primary/10 text-primary text-xs font-bold uppercase tracking-[0.2em] max-w-full"
+                id="hero-badge"
+              >
+                Frontend Developer | 2+ Year Experience
+              </div>
+              <h1
+                class="text-6xl lg:text-7xl font-black leading-[0.9] tracking-tighter mb-8 dark:text-white uppercase"
+              >
+                <span id="hero-title-line1">ANGULAR</span><br />
+                <span class="text-primary" id="hero-title-line2"
+                  >DEVELOPER</span
+                >
+              </h1>
+              <p
+                class="text-xl text-slate-600 dark:text-slate-400 max-w-lg leading-relaxed mb-10"
+                id="hero-description"
+              >
+                Creating responsive, enterprise-grade Angular applications with
+                modern UI frameworks. Focused on component reusability and user
+                experience.
+              </p>
+              <div class="flex flex-wrap gap-4" id="hero-buttons">
+                <a
+                  href="#projects"
+                  class="bg-primary text-white px-8 py-4 rounded-sm font-bold uppercase tracking-widest text-sm flex items-center gap-2 group"
+                >
+                  View My Work
+                  <span
+                    class="material-symbols-outlined group-hover:translate-x-1 transition-transform"
+                    >arrow_forward</span
+                  >
+                </a>
+                <a
+                  href="resume.pdf"
+                  download
+                  class="border border-primary text-primary px-8 py-4 rounded-sm font-bold uppercase tracking-widest text-sm flex items-center gap-2 group hover:text-white transition-all"
+                >
+                  Resume
+                  <span
+                    class="material-symbols-outlined group-hover:translate-y-1 transition-transform"
+                    >download</span
+                  >
+                </a>
+              </div>
+            </div>
+            <div
+              class="relative lg:h-[500px] flex items-center justify-center min-w-0"
+              id="hero-visual"
+            >
+              <div
+                class="absolute inset-0 rounded-full blur-[120px]"
+                id="hero-glow"
+              ></div>
+              <div
+                class="w-full bg-slate-900 border border-white/10 rounded-lg p-6 shadow-2xl code-snippet text-sm relative overflow-hidden"
+              >
+                <div class="flex gap-1.5 mb-4">
+                  <div class="w-3 h-3 rounded-full bg-red-500/50"></div>
+                  <div class="w-3 h-3 rounded-full bg-amber-500/50"></div>
+                  <div class="w-3 h-3 rounded-full bg-emerald-500/50"></div>
                 </div>
+                <pre
+                  class="text-slate-300 overflow-x-auto max-w-full"
+                  id="code-snippet"
+                ><code><span class="text-slate-500">// Component with Kendo UI</span>
+<span class="code-accent">@Component</span>({
+  selector: <span class="text-emerald-400">'app-dashboard'</span>,
+  template: <span class="text-emerald-400">`
+    &lt;kendo-grid [data]="items"&gt;
+    &lt;/kendo-grid&gt;
+  `</span>
+})
+<span class="text-blue-400">export class</span> <span class="text-emerald-400">DashboardComponent</span> {
+  items: <span class="text-blue-400">any</span>[] = [];
+  
+  <span class="code-accent">ngOnInit</span>() {
+    <span class="text-blue-400">this</span>.loadData();
+  }
+}</code></pre>
+                <div
+                  class="mt-8 pt-6 border-t border-white/5 grid grid-cols-4 gap-4"
+                  id="progress-bars"
+                >
+                  <div class="h-1 w-full bar-1"></div>
+                  <div class="h-1 w-full bar-2"></div>
+                  <div class="h-1 w-full bar-3"></div>
+                  <div class="h-1 w-full bar-4"></div>
+                </div>
+              </div>
             </div>
-            <div class="row">
-                <h2 style="text-align: center; font-size: 30px; color: rgb(56, 96, 129); display: flex; justify-content: center;">Just a showcase, nothing much :)</h2>
+          </div>
+        </section>
+
+        <section
+          class="py-24 border-b border-slate-200 dark:border-white/5 bg-slate-50 dark:bg-white/[0.02]"
+          id="about"
+        >
+          <div class="max-w-7xl mx-auto px-6">
+            <div class="profile-tabs-wrapper mb-12">
+              <div class="profile-tabs">
+                <button
+                  class="profile-tab-btn angular-tab active"
+                  data-platform="angular"
+                >
+                  <span class="tab-dot"></span> Angular Developer
+                </button>
+                <button
+                  class="profile-tab-btn dotnet-tab"
+                  data-platform="dotnet"
+                >
+                  <span class="tab-dot"></span> .NET Developer
+                </button>
+              </div>
             </div>
+            <div id="strengths-grid" class="strengths-grid"></div>
+          </div>
+        </section>
+
+        <section
+          class="py-24 border-b border-slate-200 dark:border-white/5"
+          id="skills"
+        >
+          <div class="max-w-7xl mx-auto px-6">
+            <div class="flex justify-between items-end mb-16">
+              <div>
+                <h2
+                  class="text-md font-bold uppercase tracking-[0.3em] text-primary mb-4"
+                >
+                  Core Stack
+                </h2>
+                <h3 class="text-4xl font-black dark:text-white">
+                  Technical Ecosystem
+                </h3>
+              </div>
+              <div class="hidden md:block text-right">
+                <span class="text-slate-500 code-snippet text-xs"
+                  >Full Stack Toolkit</span
+                >
+              </div>
+            </div>
+            <div class="skills-panel active" data-platform="angular">
+              <div id="angular-skills-grid" class="skills-grid"></div>
+            </div>
+            <div class="skills-panel" data-platform="dotnet">
+              <div id="dotnet-skills-grid" class="skills-grid"></div>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="py-24 border-t border-slate-200 dark:border-white/5"
+          id="experience"
+        >
+          <div class="max-w-7xl mx-auto px-6">
+            <h2
+              class="text-md font-bold uppercase tracking-[0.3em] text-primary mb-4 text-center"
+            >
+              Professional Timeline
+            </h2>
+            <h3
+              class="text-5xl font-black dark:text-white text-center mb-12 uppercase tracking-tighter"
+            >
+              Experience
+            </h3>
+            <div
+              class="max-w-3xl mx-auto relative"
+              id="experience-timeline"
+            ></div>
+          </div>
+        </section>
+
+        <section class="py-24 bg-slate-50 dark:bg-white/[0.02]" id="projects">
+          <div class="max-w-7xl mx-auto px-6">
+            <h2
+              class="text-md font-bold uppercase tracking-[0.3em] text-primary mb-4 text-center"
+            >
+              Portfolio
+            </h2>
+            <h3
+              class="text-5xl font-black dark:text-white text-center mb-12 uppercase tracking-tighter"
+            >
+              Recent Projects
+            </h3>
+            <div class="project-tabs">
+              <button class="tab-btn active" data-tab="professional">
+                Professional Projects
+              </button>
+              <button class="tab-btn" data-tab="personal">
+                Personal Projects
+              </button>
+            </div>
+            <div
+              id="professional-projects"
+              class="projects-container active-tab"
+            ></div>
+            <div id="personal-projects" class="projects-container"></div>
+          </div>
+        </section>
+
+        <section class="py-24 bg-slate-900 text-white" id="contact">
+          <div class="max-w-7xl mx-auto px-6">
+            <div class="grid lg:grid-cols-2 gap-20">
+              <div>
+                <h2
+                  class="text-md font-bold uppercase tracking-[0.3em] text-primary mb-6"
+                >
+                  Contact
+                </h2>
+                <h3
+                  class="text-6xl font-black mb-10 leading-none tracking-tighter uppercase"
+                >
+                  Let's<br />Connect.
+                </h3>
+                <p class="text-slate-400 max-w-sm mb-12 text-lg">
+                  Looking for a full-stack developer to build your next
+                  application? I'm available for new opportunities.
+                </p>
+                <div class="flex flex-col gap-4 mb-8">
+                  <a
+                    href="https://www.linkedin.com/in/satyanarayan-kanth-801b351bb/"
+                    target="_blank"
+                    class="text-slate-400 hover:text-primary transition-colors flex items-center gap-2"
+                  >
+                    <span class="material-symbols-outlined">
+                      nest_heat_link_e
+                    </span>
+                    LinkedIn
+                  </a>
+                  <a
+                    href="mailto:19bcs2063@gmail.com"
+                    class="text-slate-400 hover:text-primary transition-colors flex items-center gap-2"
+                  >
+                    <span class="material-symbols-outlined"
+                      >alternate_email</span
+                    >
+                    19bcs2063@gmail.com
+                  </a>
+                  <a
+                    href="tel:+919135287017"
+                    class="text-slate-400 hover:text-primary transition-colors flex items-center gap-2"
+                  >
+                    <span class="material-symbols-outlined">phone</span>
+                    +91 9135287017
+                  </a>
+                </div>
+              </div>
+              <div
+                class="bg-black border border-white/10 rounded-sm p-8 shadow-2xl relative overflow-hidden"
+              >
+                <div class="flex items-center gap-4 mb-8">
+                  <div class="size-3 rounded-full bg-emerald-500"></div>
+                  <span class="code-snippet text-xs text-slate-500"
+                    >CONTACT FORM</span
+                  >
+                </div>
+                <form class="space-y-6" id="contact-form">
+                  <div>
+                    <label
+                      class="block code-snippet text-xs text-slate-500 uppercase mb-2"
+                      >Name</label
+                    >
+                    <input
+                      name="name"
+                      class="w-full bg-white/5 border-none focus:ring-1 focus:ring-primary code-snippet text-white placeholder:text-white/20 px-4 py-3"
+                      placeholder="your name"
+                      type="text"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label
+                      class="block code-snippet text-xs text-slate-500 uppercase mb-2"
+                      >Email</label
+                    >
+                    <input
+                      name="email"
+                      class="w-full bg-white/5 border-none focus:ring-1 focus:ring-primary code-snippet text-white placeholder:text-white/20 px-4 py-3"
+                      placeholder="your@email.com"
+                      type="email"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label
+                      class="block code-snippet text-xs text-slate-500 uppercase mb-2"
+                      >Message</label
+                    >
+                    <textarea
+                      name="message"
+                      class="w-full bg-white/5 border-none focus:ring-1 focus:ring-primary code-snippet text-white placeholder:text-white/20 px-4 py-3 resize-none"
+                      placeholder="Your message here..."
+                      rows="4"
+                      required
+                    ></textarea>
+                  </div>
+                  <button
+                    class="w-full bg-primary py-4 code-snippet font-bold uppercase tracking-widest hover:bg-primary/90 transition-all"
+                    type="submit"
+                  >
+                    Send Message
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer
+        class="py-10 border-t border-slate-200 dark:border-white/5 dark:bg-background-dark"
+      >
+        <div
+          class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6"
+        >
+          <div class="flex items-center gap-2">
+            <span
+              class="text-xs font-black tracking-tighter uppercase dark:text-white"
+              >SATYA<span class="text-primary">DEV</span></span
+            >
+            <span class="text-xs text-slate-500 code-snippet">© 2025</span>
+          </div>
+          <div
+            class="text-xs text-slate-500 code-snippet uppercase tracking-widest"
+          >
+            Angular & .NET Ecosystem
+          </div>
+          <div class="flex gap-4">
+            <span class="material-symbols-outlined text-slate-500 text-sm"
+              >verified</span
+            >
+            <span class="material-symbols-outlined text-slate-500 text-sm"
+              >database</span
+            >
+            <span class="material-symbols-outlined text-slate-500 text-sm"
+              >terminal</span
+            >
+          </div>
         </div>
-    </main>
-    <!--Main Body ends-->
-    <!--Footer starts-->
-    <footer class="bg-dark" style="color: white;padding: 20px 50px;">
-        <div class="row">
-            <div class="col-xl-4">
-                <p style="font-size: 25px;">For any query contact me.</p>
-                <a href="mailto:19bcs2063@gmail.com"><button class="btn btn-info" style="padding: 10px 100px; color: white;">Contact me</button></a>
-                <p style="margin-top: 88px;">2022 copyright &#169; all right reserved.</p>
-            </div>
-            <div class="col-xl-4">
-                <p style="font-size: 25px;">More from me</p>
-                <ul id="more">
-                    <li>
-                        <a href="https://codeforstudy.wordpress.com/" target="_blank">Click here to learn with me.</a>
-                    </li>
-                    <li>
-                        <a href="https://codeforstudy.wordpress.com/c/" target="_blank">Click here to see all C programs by me</a>
-                    </li>
-                    <li><a href="https://codeforstudy.wordpress.com/c-language/" target="_blank">Click here to see all C++ programs by me</a></li>
-                    <li>
-                        <a href="#" target="_blank">Click here to view Question library.</a>
-                    </li>
-                    <li>
-                        <a href="https://codeforstudy.wordpress.com/academic/" target="_blank">Click here to see all my posts</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="col-xl-4">
-                <p style="font-size: 25px;">Should we end now :( </p>
-                <p>Felling sad to see you go :( Hope we meet again :)</p>
-                <p style="font-size: 30px;font-family: sans-serif;color: #d6a829;">Thank You !</p> 
-            </div>
-        </div>
-    </footer>
-    <!--Footer ends-->
-</body>
-<!--Body ends-->
+      </footer>
+    </div>
+    <script src="script.js"></script>
+  </body>
 </html>

@@ -1,0 +1,762 @@
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700;900&family=Fira+Code:wght@400;500&display=swap");
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary: #dd0031;
+  --primary-rgb: 221, 0, 49;
+  --background-light: #f8f5f6;
+  --background-dark: #0f0a0b;
+  --border-color: rgba(255, 255, 255, 0.1);
+  --text-color: #edf2ee;
+  --text-muted: #bd7a8d;
+}
+
+body.theme-dotnet {
+  --primary: #0078d4;
+  --primary-rgb: 0, 120, 212;
+  --text-muted: #7a9dbd;
+}
+
+body.theme-angular {
+  --primary: #dd0031;
+  --primary-rgb: 221, 0, 49;
+  --text-muted: #bd7a8d;
+}
+
+.code-accent {
+  color: var(--primary);
+  transition: color 0.4s;
+}
+
+#hero-glow {
+  background: radial-gradient(
+    circle,
+    rgba(var(--primary-rgb), 0.1) 0%,
+    transparent 70%
+  );
+  transition: background 0.4s;
+}
+
+.bar-1 {
+  background: rgba(var(--primary-rgb), 0.4);
+  transition: background 0.4s;
+}
+
+.bar-2 {
+  background: var(--primary);
+  transition: background 0.4s;
+}
+
+.bar-3 {
+  background: rgba(var(--primary-rgb), 0.2);
+  transition: background 0.4s;
+}
+
+.bar-4 {
+  background: rgba(var(--primary-rgb), 0.6);
+  transition: background 0.4s;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Work Sans", sans-serif;
+  background: var(--background-dark);
+  color: var(--text-color);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+.code-snippet {
+  font-family: "Fira Code", monospace;
+}
+
+::selection {
+  background: var(--primary);
+  color: white;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 4px;
+}
+
+.bg-primary {
+  background: var(--primary) !important;
+  transition: background 0.4s;
+}
+
+.text-primary {
+  color: var(--primary) !important;
+  transition: color 0.4s;
+}
+
+.border-primary {
+  border-color: var(--primary) !important;
+  transition: border-color 0.4s;
+}
+
+.hover\:text-primary:hover {
+  color: var(--primary) !important;
+}
+
+.hover\:bg-primary\/90:hover {
+  background: rgba(var(--primary-rgb), 0.9) !important;
+}
+
+.hover\:bg-primary:hover {
+  background: var(--primary) !important;
+}
+
+.focus\:ring-primary:focus {
+  --tw-ring-color: var(--primary) !important;
+}
+
+.border-primary\/30 {
+  border-color: rgba(var(--primary-rgb), 0.3) !important;
+}
+
+.bg-primary\/10 {
+  background: rgba(var(--primary-rgb), 0.1) !important;
+}
+
+.theme-switcher {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.theme-btn {
+  padding: 8px 16px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.4);
+  font-family: "Work Sans", sans-serif;
+  transition: all 0.25s;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.theme-btn .theme-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.theme-btn.angular .theme-dot {
+  background: #dd0031;
+}
+
+.theme-btn.dotnet .theme-dot {
+  background: #0078d4;
+}
+
+.theme-btn.angular.active {
+  background: rgba(221, 0, 49, 0.12);
+  color: #dd0031;
+}
+
+.theme-btn.dotnet.active {
+  background: rgba(0, 120, 212, 0.12);
+  color: #0078d4;
+}
+
+.profile-tabs-wrapper {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 3rem;
+}
+
+.profile-tabs {
+  display: flex;
+  gap: 0;
+}
+
+.profile-tab-btn {
+  padding: 18px 32px;
+  font-size: 15px;
+  font-weight: 700;
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  font-family: "Work Sans", sans-serif;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+  transition: color 0.2s;
+}
+
+.profile-tab-btn:hover {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.profile-tab-btn.active {
+  color: var(--primary);
+}
+
+.profile-tab-btn.active::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--primary);
+}
+
+.profile-tab-btn .tab-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.profile-tab-btn.angular-tab .tab-dot {
+  background: #dd0031;
+}
+
+.profile-tab-btn.dotnet-tab .tab-dot {
+  background: #0078d4;
+}
+
+.strengths-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+}
+
+.strength-card {
+  padding: 52px 44px;
+  border-right: 1px solid rgba(255, 255, 255, 0.05);
+  transition: background 0.3s;
+}
+
+.strength-card:last-child {
+  border-right: none;
+}
+
+.strength-card:hover {
+  background: rgba(var(--primary-rgb), 0.02);
+}
+
+.strength-label {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  color: var(--primary);
+  text-transform: uppercase;
+  margin-bottom: 18px;
+  font-family: "Fira Code", monospace;
+}
+
+.strength-title {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 14px;
+  color: var(--text-color);
+}
+
+.strength-description {
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.75;
+}
+
+.skills-panel {
+  display: none;
+}
+
+.skills-panel.active {
+  display: block;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 24px;
+}
+
+.skill-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 32px;
+  border-radius: 4px;
+  transition: all 0.3s;
+}
+
+.skill-card:hover {
+  border-color: var(--primary);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.skill-card .material-symbols-outlined {
+  font-size: 32px;
+  color: var(--primary);
+  margin-bottom: 16px;
+  display: block;
+}
+
+.skill-name {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.skill-details {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.project-tabs {
+  display: flex;
+  gap: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 40px;
+}
+
+.tab-btn {
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.4);
+  padding: 16px 32px;
+  font-family: "Work Sans", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  position: relative;
+  transition: color 0.2s;
+}
+
+.tab-btn:hover {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.tab-btn.active {
+  color: var(--primary);
+}
+
+.tab-btn.active::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--primary);
+}
+
+.projects-container {
+  display: none;
+}
+
+.projects-container.active-tab {
+  display: block;
+}
+
+.project-item {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+  margin-bottom: 80px;
+}
+
+.project-item:nth-child(even) .project-image {
+  order: 2;
+}
+
+.project-item:nth-child(even) .project-content {
+  order: 1;
+}
+
+.project-image {
+  aspect-ratio: 16/9;
+  border-radius: 4px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+}
+
+.project-image::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(var(--primary-rgb), 0.2);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.project-item:hover .project-image::before {
+  opacity: 1;
+}
+
+.project-number {
+  font-size: 12px;
+  color: var(--primary);
+  margin-bottom: 16px;
+  display: block;
+}
+
+.project-title {
+  font-size: 32px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  margin-bottom: 16px;
+}
+
+.project-role {
+  font-size: 13px;
+  color: var(--primary);
+  font-weight: 500;
+  margin-bottom: 16px;
+  letter-spacing: 0.04em;
+}
+
+.project-description {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.75;
+  margin-bottom: 24px;
+}
+
+.project-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.tech-tag {
+  padding: 6px 12px;
+  background: rgba(var(--primary-rgb), 0.1);
+  border: 1px solid rgba(var(--primary-rgb), 0.3);
+  color: var(--primary);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  border-radius: 2px;
+}
+
+.project-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border-radius: 2px;
+  transition: all 0.3s;
+}
+
+.project-link:hover {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: white;
+}
+
+#experience-timeline {
+  max-width: 100%;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Company Block */
+.exp-company-block {
+  margin-bottom: 40px;
+}
+
+.exp-company-block + .exp-company-block {
+  padding-top: 32px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* Company Header */
+.exp-company-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 8px;
+}
+
+.exp-company-logo {
+  width: 52px;
+  height: 52px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.exp-company-logo .material-symbols-outlined {
+  font-size: 26px;
+  color: var(--primary);
+}
+
+.exp-company-info {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.exp-company-name {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--text-color);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  line-height: 1.2;
+}
+
+.exp-company-total-duration {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.35);
+  font-family: "Fira Code", monospace;
+}
+
+/* Roles List — indented under company logo */
+.exp-roles-list {
+  margin-left: 26px;
+  padding-left: 26px;
+  border-left: 2px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Individual Role Row */
+.exp-role-item {
+  display: flex;
+  gap: 16px;
+  position: relative;
+  padding-bottom: 28px;
+}
+
+.exp-role-item.last {
+  padding-bottom: 0;
+}
+
+/* Dot on the vertical line */
+.exp-role-connector {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  margin-left: -33px;
+  flex-shrink: 0;
+  padding-top: 4px;
+}
+
+.exp-role-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  border: 2px solid rgba(255, 255, 255, 0.12);
+  flex-shrink: 0;
+  transition:
+    background 0.3s,
+    box-shadow 0.3s;
+  z-index: 1;
+}
+
+.exp-role-dot.active {
+  background: var(--primary);
+  border-color: var(--primary);
+  box-shadow: 0 0 10px rgba(var(--primary-rgb), 0.6);
+}
+
+/* Role Content */
+.exp-role-content {
+  flex: 1;
+  padding-top: 0;
+}
+
+.exp-role-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.exp-role-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-color);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  line-height: 1.3;
+}
+
+.exp-role-duration-badge {
+  font-size: 11px;
+  color: var(--primary);
+  font-family: "Fira Code", monospace;
+  white-space: nowrap;
+  flex-shrink: 0;
+  background: rgba(var(--primary-rgb), 0.08);
+  border: 1px solid rgba(var(--primary-rgb), 0.2);
+  padding: 2px 8px;
+  border-radius: 2px;
+}
+
+.exp-role-meta {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.4);
+  margin-top: 4px;
+}
+
+.exp-role-location {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.3);
+  margin-top: 2px;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.exp-role-location .material-symbols-outlined {
+  font-size: 13px;
+}
+
+.exp-role-description {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.55);
+  line-height: 1.75;
+  margin-top: 10px;
+}
+
+/* Skill Tags */
+.exp-skills-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.exp-skill-tag {
+  padding: 3px 10px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  border-radius: 2px;
+  font-family: "Fira Code", monospace;
+}
+
+/* =============================================
+   Responsive
+   ============================================= */
+
+@media (max-width: 1024px) {
+  .strengths-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .strength-card {
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .strength-card:last-child {
+    border-bottom: none;
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .project-item {
+    grid-template-columns: 1fr;
+  }
+
+  .project-item:nth-child(even) .project-image {
+    order: 1;
+  }
+
+  .project-item:nth-child(even) .project-content {
+    order: 2;
+  }
+}
+
+@media (max-width: 768px) {
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .strength-card {
+    padding: 40px 28px;
+  }
+
+  #hero-badge {
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    padding: 6px 10px;
+  }
+
+  .exp-role-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  #experience-timeline {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+#hero-buttons {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 1rem !important;
+}
+
+#hero-buttons a {
+  white-space: nowrap;
+}
